@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>حذف بيانات المستخدم</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.6;background:#f7f7fb;color:#111;margin:0;padding:0}
+    .container{max-width:800px;margin:48px auto;background:#fff;padding:28px;border-radius:10px;box-shadow:0 6px 24px rgba(18,38,63,0.07)}
+    h1{margin-top:0;color:#0b5ed7}
+    p{margin:12px 0}
+    .note{background:#eef6ff;padding:12px;border-radius:6px;margin:14px 0}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #0b5ed7;color:#0b5ed7}
+    .footer{margin-top:18px;font-size:0.9rem;color:#555}
+    .field{margin:12px 0}
+    input[type="email"],textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:1rem}
+    label{display:block;margin-bottom:6px;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>حذف بيانات المستخدم</h1>
+
+    <p>نرحب بطلبات حذف البيانات. لو حابب نحذف أي بيانات مرتبطة بحسابك أو باستخدامك لهذا التطبيق، من فضلك اختر واحدة من الطرق التالية وابعتلنا المعلومات المطلوبة.</p>
+
+    <div class="note">
+      <strong>مهم:</strong> بعد استلام طلب حذف البيانات، هنراجع الطلب ونقوم بحذف البيانات في مدة لا تتجاوز <strong>7 أيام عمل</strong>. بعض العمليات (زي إزالة النسخ الاحتياطية) قد تستغرق وقتًا أطول وفق سياسات الأنظمة المعنية.
+    </div>
+
+    <h2>طرق تقديم طلب الحذف</h2>
+
+    <div class="field">
+      <label>١) عن طريق البريد الإلكتروني</label>
+      <p>ابعتلنا على: <a href="mailto:your-email@example.com">anastasa357@gmail.com</a></p>
+      <p>في الرسالة اذكر: اسم الحساب/البريد المستخدم، وصف مختصر للطلب، وأي معلومات تساعدنا نحدد حسابك (مثلاً معرف الصفحة أو رابط الملف الشخصي).</p>
+    </div>
+
+    <div class="field">
+      <label>٢) طلب عبر نموذج (إذا كان متوفر)</label>
+      <p>لو عندك واجهة أمامية أو API بتتعامل مع الطلبات، نستخدم endpoint لحذف البيانات. مثال على طلب JSON (مُعياري):</p>
+      <pre style="background:#f3f6fb;padding:12px;border-radius:6px;overflow-x:auto">
+POST /api/delete-data
+Content-Type: application/json
+
+{
+  "user_id": "123456789",
+  "email": "user@example.com",
+  "reason": "أريد حذف بياناتي"
+}
+      </pre>
+      <p>لو عايز نفعل endpoint زي ده، ابعتلي وانا أساعدك تجهّز الكود البسيط.</p>
+    </div>
+
+    <h2>ماذا يتم حذفه؟</h2>
+    <p>هنقوم بحذف أية بيانات شخصية مخزنة مرتبطة بالمعرف اللي قدمته مثل الاسم، الإيميل، وأي بيانات مرتبطة بالتفاعل مع التطبيق. نحتفظ فقط بسجلات تقنية ضئيلة إن كانت لازمة للامتثال القانوني أو الأمان (ونوضح ده لو حصل).</p>
+
+    <h2>تأكيد الإجراء</h2>
+    <p>بعد تنفيذ الحذف، هنرسل لك رسالة تأكيد على الإيميل اللي قدمته تفيد إن البيانات اتحذفت بالفعل.</p>
+
+    <div class="footer">
+      <p>لو محتاج مساعدة فنية في تنفيذ endpoint أو تريد أن أجهز لك صفحة HTML أو كود Flask/Node.js يعالج طلب الحذف ويجيب JSON، قولّي وانا أحضرهولك جاهز للرفع.</p>
+      <p><strong>ملاحظة:</strong> غير رابط الإيميل في الأعلى من <code>your-email@example.com</code> لإيميلك الحقيقي قبل ما تحط الصفحة في Meta Dashboard.</p>
+    </div>
+  </div>
+</body>
+</html>
